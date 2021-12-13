@@ -1,0 +1,28 @@
+<h1>Employee Details</h1>
+
+<div class="container">
+    <table id="emp" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Phone Number</th>
+        <th>Designation</th>
+        <th>Status</th>
+        <th>Edit Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let emp of EmpList">
+        <td><span>{{emp.EmployeeId}}</span></td>
+        <td><span>{{emp.EmployeeName}}</span></td>
+        <td><span>{{emp.EmployeeEmail}}</span></td>
+        <td><span>{{emp.PhoneNumber}}</span></td>
+        <td><span>{{emp.Designation}}</span></td>
+        <td><span>{{emp.Status}}</span></td>
+        <td><button (click)="onSelect(emp)" class="btn btn-sm btn-warning">Edit</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

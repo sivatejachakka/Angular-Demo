@@ -1,0 +1,49 @@
+<!-- 
+<div>
+    <span style="padding-left:10px; padding-right:20px;"><button (click)="goBack()" class="backBtn">&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;</button></span>
+</div> -->
+
+<div class="container-fluid">
+    <h2>Edit Details</h2>
+    <form #empForm="ngForm">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>EmployeeId: </label>
+                    <input disabled type="text" name="EmployeeId" class="form-control" [(ngModel)]="employeeModel.EmployeeId">
+                </div>
+                <div class="form-group">
+                    <label>EmployeeName: </label>
+                    <input [disabled]="!isActive" type="text" name="EmployeeName" class="form-control" [(ngModel)]="employeeModel.EmployeeName">
+                </div>
+                <div class="form-group">
+                    <label>EmployeeEmail: </label>
+                    <input disabled type="email" name="EmployeeEmail" class="form-control" [(ngModel)]="employeeModel.EmployeeEmail">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>PhoneNumber: </label>
+                    <input [disabled]="!isActive" type="tel" name="PhoneNumber" class="form-control" [(ngModel)]="employeeModel.PhoneNumber">
+                </div>
+                <div class="form-group">
+                    <label>Designation: </label>
+                    <input [disabled]="!isActive" type="text" name="Designation" class="form-control" [(ngModel)]="employeeModel.Designation">
+                </div>
+                <div class="form-group">
+                    <label>Status: </label>
+                    <input [disabled]="!isActive" type="text" name="Status" class="form-control" [(ngModel)]="employeeModel.Status">
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin: 20px;"><button [disabled]="!isActive" type="submit" (click)="updateDetails(employeeModel)" class="btn btn-primary">Save</button></div>
+    </form>
+</div>
+
+<div>
+    <!-- <span style="padding-left:20px; padding-right:10px;"><button (click)="toPrevious()" class="prevBtn">Previous</button></span>
+    <span style="padding-left:10px; padding-right:10px;"><button (click)="toNext()" class="nextBtn">&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</button></span> -->
+    <span style="padding-left:10px; padding-right:20px;"><button (click)="goBack()" class="backBtn">&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;</button></span>
+</div>
+
+<h3>{{employeeModel|json}}</h3>
